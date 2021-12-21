@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:silka.ViewModels"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="silka.Views.Main_Page_Gym"
+             BackgroundColor="White"
+             >
+    <ContentPage.Content>
+        <RefreshView
+            IsRefreshing="{Binding IsRefreshing}"
+            Command="{Binding RefreshCommand}"
+            >
+            <CollectionView ItemsSource="{Binding Exercises}"
+                            BackgroundColor="Transparent"
+                            ItemSizingStrategy="MeasureAllItems"
+                            RemainingItemsThreshold="1"
+                            SelectionMode="None"
+                            x:Name="UwU">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Button 
+                                    Text="{Binding Name}"
+                                    TextColor="White"       
+                                    CornerRadius="10"
+                                    Margin="10,10,10,0"      
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ExerciseViewModel}}, Path=OnClicked}"
+                                    ImageSource="{Binding Image}"
+                                    
+
+                                >
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="1,0">
+                                        <GradientStop Color="Purple" Offset="0.1" />
+                                        <GradientStop Color="MediumPurple" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

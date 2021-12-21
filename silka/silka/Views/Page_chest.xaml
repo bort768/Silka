@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="silka.Views.Page_chest">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid RowDefinitions="70"
+                  ColumnDefinitions="70">
+                <BoxView Color="CornflowerBlue"
+                         CornerRadius="10"
+                         WidthRequest="70"
+                         HeightRequest="70"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         Margin="2,2,0,0"
+                         Grid.Column="0"
+                         Grid.Row="0"
+                          >
+                    <BoxView.Background>
+                        <LinearGradientBrush EndPoint="1,1">
+                            <GradientStop Color="Purple" Offset="0.1" />
+                            <GradientStop Color="MediumPurple" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+                <Label Text="SET 1" 
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Margin="2,2,0,0"/>
+
+
+                <Editor x:Name="editor" 
+                        Grid.Column="1"
+                        Grid.Row="0" 
+                        Placeholder="Podaj wagę"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="StartAndExpand"/>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
